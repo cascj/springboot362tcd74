@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChapterkechengziyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChapterkechengziyuanEntity" id="chapterkechengziyuanMap">
+        <result property="refid" column="refid"/>
+        <result property="chapternum" column="chapternum"/>
+        <result property="chaptertitle" column="chaptertitle"/>
+        <result property="content" column="content"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChapterkechengziyuanVO" >
+		SELECT * FROM chapterkechengziyuan  chapterkechengziyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChapterkechengziyuanVO" >
+		SELECT  chapterkechengziyuan.* FROM chapterkechengziyuan  chapterkechengziyuan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChapterkechengziyuanView" >
+
+		SELECT  chapterkechengziyuan.* FROM chapterkechengziyuan  chapterkechengziyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChapterkechengziyuanView" >
+		SELECT * FROM chapterkechengziyuan  chapterkechengziyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
